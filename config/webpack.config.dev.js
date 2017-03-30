@@ -79,7 +79,7 @@ module.exports = {
       'react-native': 'react-native-web'
     }
   },
-  
+
   module: {
     // First, run the linter.
     // It's important to do this before Babel processes the JS.
@@ -107,6 +107,7 @@ module.exports = {
       // A missing `test` is equivalent to a match.
       {
         exclude: [
+          /\.md$/,
           /\.html$/,
           /\.(js|jsx)$/,
           /\.css$/,
@@ -125,7 +126,7 @@ module.exports = {
         include: paths.appSrc,
         loader: 'babel',
         query: {
-          
+
           // This is a feature of `babel-loader` for webpack (not Babel itself).
           // It enables caching results in ./node_modules/.cache/babel-loader/
           // directory for faster rebuilds.
@@ -147,6 +148,11 @@ module.exports = {
         test: /\.json$/,
         loader: 'json'
       },
+      // Markfown loader
+      {
+        test: /\.md$/,
+        loader: 'html!markdown'
+      },
       // "file" loader for svg
       {
         test: /\.svg$/,
@@ -157,7 +163,7 @@ module.exports = {
       }
     ]
   },
-  
+
   // We use PostCSS for autoprefixing only.
   postcss: function() {
     return [

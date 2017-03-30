@@ -87,7 +87,7 @@ module.exports = {
       'react-native': 'react-native-web'
     }
   },
-  
+
   module: {
     // First, run the linter.
     // It's important to do this before Babel processes the JS.
@@ -113,6 +113,7 @@ module.exports = {
       // assets smaller than specified size as data URLs to avoid requests.
       {
         exclude: [
+          /\.md$/,
           /\.html$/,
           /\.(js|jsx)$/,
           /\.css$/,
@@ -130,7 +131,7 @@ module.exports = {
         test: /\.(js|jsx)$/,
         include: paths.appSrc,
         loader: 'babel',
-        
+
       },
       // The notation here is somewhat confusing.
       // "postcss" loader applies autoprefixer to our CSS.
@@ -155,6 +156,11 @@ module.exports = {
         test: /\.json$/,
         loader: 'json'
       },
+      // Markfown loader
+      {
+        test: /\.md$/,
+        loader: 'html!markdown'
+      },
       // "file" loader for svg
       {
         test: /\.svg$/,
@@ -165,7 +171,7 @@ module.exports = {
       }
     ]
   },
-  
+
   // We use PostCSS for autoprefixing only.
   postcss: function() {
     return [
