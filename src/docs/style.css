@@ -1,0 +1,106 @@
+
+.menu-button {
+  background: #03C8A6;
+  position: fixed;
+  bottom: 20px;
+  left: 10px;
+  width: 50px;
+  height: 50px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #bbb;
+  border-radius: 50px;
+}
+
+.docs-menu {
+  background: white;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: 250px;
+  padding: 5px;
+}
+
+.docs-menu h4 {
+  font-weight: bold;
+}
+
+.docs-menu a {
+  padding: 5px;
+  color: #333;
+  text-decoration: none;
+}
+
+.doc-selected {
+  font-weight: bold;
+}
+
+.doc-level-1 {
+  margin-left: 15px;
+}
+
+.documentation {
+  border-left: 1px solid #eee;
+  margin-left: 200px;
+  margin-bottom: 50px;
+  flex-grow: 3;
+  padding-left: 35px;
+  line-height: 1.6;
+}
+
+.documentation img {
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  max-width: 360px;
+}
+
+.documentation h1, h2, h3 {
+  font-weight: bold;
+}
+
+.documentation h2 {
+  border-bottom: 1px solid #DCDCDC;
+  padding-bottom: 0.3em;
+}
+
+.next-doc {
+  float: right;
+}
+
+.doc-not-found {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  padding: 50px;
+  color: #545454;
+}
+
+@media (max-width: 600px) {
+  .docs-menu {
+    left: 10px;
+    bottom: 80px;
+    padding: 5px 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    box-shadow: -5px -5px 5px #bbb;
+  }
+  .documentation {
+    margin-left: 0px;
+    border-left: none;
+    padding: 20px 0px;
+  }
+  .menu-button {
+    display: flex;
+  }
+  .next-doc {
+    float: left;
+  }
+  body {
+    padding-left: 10px ;
+    padding-right: 10px ;
+  }
+}
